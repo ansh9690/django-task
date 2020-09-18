@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block head_title %}
+SignUp
+{% endblock head_title %}
+{% block css %}
+
+{% endblock css %}
+{% block content %}
+<div class="container mt-5">
+<div class="row">
+    <div class="col-4">
+        <div class="card">
+            <div class="view overlay">
+                <img class="card-img-top" src="/media/{{ user.profile.image }}" alt="img" height='300px'>
+                <a href="#!">
+                <div class="mask rgba-white-slight"></div>
+                </a>
+            </div>
+            <div class="card-body">
+                <h4 class="card-title">{{ request.user.first_name }} {{ request.user.last_name }}</h4>
+                <h6>Email - {{ user.email }}</h6>
+                <h5>Age - {{ user.profile.age }}</h5>
+                <h5>Phone no. - {{ user.profile.phone_no }}</h5>
+                <h5>Unique Id - {{ user.profile.unique_id }}</h5>
+            </div>
+            </div>
+    </div>
+</div>
+    
+</div>
+{% endblock content %}

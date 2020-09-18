@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block head_title %}
+SignUp
+{% endblock head_title %}
+{% block css %}
+
+{% endblock css %}
+{% block content %}
+<div class="container mt-5">
+    <form action="." method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+        {{ user_form|crispy }}
+        {{ profile_form|crispy }}
+        <button type="submit" class="btn blue-gradient btn-rounded">Signup</button>
+    </form>
+</div>
+{% endblock content %}
